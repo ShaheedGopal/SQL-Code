@@ -7,9 +7,9 @@ email addresses, and the store identification number where they work.
 
 SELECT 
 	first_name, 
-    last_name, 
+    	last_name, 
 	email, 
-    store_id
+   	store_id
 FROM staff;
 
 /*
@@ -29,7 +29,7 @@ GROUP BY
 
 SELECT 
 	store_id, 
-    COUNT(customer_id) AS active_customers
+    	COUNT(customer_id) AS active_customers
 FROM customer
 WHERE active = 1
 GROUP BY 
@@ -52,7 +52,7 @@ you have in inventory at each store and then provide a count of the unique categ
 
 SELECT 
 	store_id, 
-    COUNT(DISTINCT film_id) AS unique_films
+    	COUNT(DISTINCT film_id) AS unique_films
 FROM inventory
 GROUP BY 
 	store_id; 
@@ -69,8 +69,8 @@ the most expensive to replace, and the average of all films you carry. ``
 
 SELECT 
 	MIN(replacement_cost) AS least_expensive, 
-    MAX(replacement_cost) AS most_expensive, 
-    AVG(replacement_cost) AS average_replacement_cost
+    	MAX(replacement_cost) AS most_expensive, 
+    	AVG(replacement_cost) AS average_replacement_cost
 FROM film;
 
 /*
@@ -81,7 +81,7 @@ Please provide the average payment you process, as well as the maximum payment y
 
 SELECT
 	AVG(amount) AS average_payment, 
-    MAX(amount) AS max_payment
+    	MAX(amount) AS max_payment
 FROM payment;
 
 /*
@@ -92,7 +92,7 @@ they have made all-time, with your highest volume customers at the top of the li
 
 SELECT 
 	customer_id, 
-    COUNT(rental_id) AS number_of_rentals
+    	COUNT(rental_id) AS number_of_rentals
 FROM rental
 GROUP BY 
 	customer_id
